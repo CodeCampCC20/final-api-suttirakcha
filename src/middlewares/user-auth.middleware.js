@@ -12,7 +12,7 @@ export const userAuthMiddleware = (req, res, next) => {
 
     jwt.verify(token, process.env.JWT_SECRET, (error, decode) => {
       if (error) {
-        createError(401, "Unauthorized");
+        createError(401, "Invalid token");
       }
       req.user = decode;
       next();

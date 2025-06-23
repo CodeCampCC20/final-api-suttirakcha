@@ -1,4 +1,5 @@
 import prisma from "../config/prisma.js";
+import bcrypt from "bcryptjs";
 
 export const getUserMe = async (req, res, next) => {
   const { id } = req.user;

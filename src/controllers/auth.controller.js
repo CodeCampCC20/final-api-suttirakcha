@@ -112,7 +112,7 @@ export const loginDoctor = async (req, res, next) => {
     }
 
     const payload = { id: doctor?.id, username: doctor?.username };
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+    const token = jwt.sign(payload, process.env.DOCTOR_SECRET, {
       algorithm: "HS256",
       expiresIn: "1h",
     });

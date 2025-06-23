@@ -141,7 +141,8 @@ exports.Prisma.HealthRecordScalarFieldEnum = {
   id: 'id',
   type: 'type',
   value: 'value',
-  date: 'date',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   userId: 'userId'
 };
 
@@ -149,7 +150,9 @@ exports.Prisma.DoctorNoteScalarFieldEnum = {
   id: 'id',
   note: 'note',
   createdAt: 'createdAt',
-  doctorId: 'doctorId'
+  updatedAt: 'updatedAt',
+  doctorId: 'doctorId',
+  userId: 'userId'
 };
 
 exports.Prisma.SortOrder = {
@@ -171,6 +174,11 @@ exports.Prisma.DoctorOrderByRelevanceFieldEnum = {
 exports.Prisma.HealthRecordOrderByRelevanceFieldEnum = {
   type: 'type',
   value: 'value'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 exports.Prisma.DoctorNoteOrderByRelevanceFieldEnum = {

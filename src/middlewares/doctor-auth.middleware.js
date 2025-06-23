@@ -10,9 +10,9 @@ export const doctorAuthMiddleware = (req, res, next) => {
 
     const token = headers?.split(" ")[1];
 
-    jwt.verify(token, process.env.JWT_SECRET, (error, decode) => {
+    jwt.verify(token, process.env.DOCTOR_SECRET, (error, decode) => {
       if (error) {
-        createError(401, "Unauthorized");
+        createError(401, "Invalid token");
       }
       req.doctor = decode;
       next();

@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { createError } from "../utils/createError.js";
 
-export const authMiddleware = (req, res, next) => {
+export const doctorAuthMiddleware = (req, res, next) => {
   try {
     const headers = req.headers.authorization;
     if (!headers) {
@@ -14,16 +14,6 @@ export const authMiddleware = (req, res, next) => {
       if (error) {
         createError(401, "Unauthorized");
       }
-      console.log(decode);
-      req.user = decode;
-      next();
-    });
-
-    jwt.verify(token, process.env.DOCTOR_SECRET, (error, decode) => {
-      if (error) {
-        createError(401, "Unauthorized");
-      }
-      console.log(decode);
       req.doctor = decode;
       next();
     });
